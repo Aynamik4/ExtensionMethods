@@ -11,6 +11,11 @@ internal class Patient : IComparable<Patient>/*, IComparable*/
     public double HeightInCm { get; set; }
     public double WeightInKg { get; set; }
 
+    public override string ToString()
+    {
+        return $"Height {HeightInCm} cm. Weight {WeightInKg} kg.";
+    }
+
     public int CompareTo(Patient? other)
     {
         if (other is null)

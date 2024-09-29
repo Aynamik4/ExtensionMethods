@@ -40,4 +40,20 @@ internal static class ExtensionMethods
     {
         return i / 2;
     }
+
+    internal static void Print<T>(this IEnumerable<T> collection)
+    {
+        foreach (T item in collection)
+        {
+            Console.WriteLine(item.ToString());
+        }
+    }
+
+    internal static void Print<T, TResult>(this IEnumerable<T> collection, Func<T, TResult> func)
+    {
+        foreach (T item in collection)
+        {
+            Console.WriteLine(func(item));
+        }
+    }
 }
